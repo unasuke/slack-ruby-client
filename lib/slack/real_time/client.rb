@@ -181,13 +181,7 @@ module Slack
       end
 
       def rtm_start_method
-        if start_method
-          start_method
-        elsif @store_class && @store_class <= Slack::RealTime::Stores::Store
-          :rtm_start
-        else
-          :rtm_connect
-        end
+        :rtm_connect
       end
 
       def socket_options
